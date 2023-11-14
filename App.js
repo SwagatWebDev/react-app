@@ -1,3 +1,5 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
 // Creating an Single HTML-Structured React Element Object
 /**
  * {id: 'heading'} - Here we can set an attribute of Object in React
@@ -5,7 +7,7 @@
  * properties called type, props. Inside props we have something called id which is an
  *  attribute to what we passed and children which hold the value what pass for the element
  */
-const heading = React.createElement("h1", {id: "heading", xyz: "abc"}, "Hello World from React");
+const heading = React.createElement("h1", {id: "heading", xyz: "abc"}, "Hello World from React 🚀");
 
 console.log(heading);
 
