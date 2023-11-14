@@ -1,0 +1,22 @@
+{
+  "name": "react-app",
+  "version": "1.0.0",
+  "description": "This is a react app by Swagat Mishra",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SwagatWebDev/react-app.git"
+  },
+  "author": "Swagat Mishra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SwagatWebDev/react-app/issues"
+  },
+  "homepage": "https://github.com/SwagatWebDev/react-app#readme",
+  "devDependencies": {
+    "parcel": "^2.10.2"
+  }
+}
