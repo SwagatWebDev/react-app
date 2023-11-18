@@ -11,3 +11,11 @@ React Practise Application
 - Minification (Production Builds)
 - Bundling
 - Compressing
+- Consistent Hashing
+- code Splitting
+- Differential Bundling
+- Diagnostics
+- Error Handling
+- Https Support
+- Tree Shaking - remove used codes
+- Different dev and production bundles
