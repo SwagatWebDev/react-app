@@ -19,3 +19,22 @@ React Practise Application
 - Https Support
 - Tree Shaking - remove used codes
 - Different dev and production bundles
+
+/**
+*
+Header Component
+- Logo Component
+- Nav Items
+
+Body Component
+- Search
+- Restaurant Container
+- Restaurant Cards
+
+Footer Component
+- Copyright
+- Links
+- Address
+- Contacts
+*
+*/
