@@ -1,3 +1,3 @@
 export const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/";
 
-export const LOGO_URL = "https://www.logodesign.net/logo/somkeing-burger-with-lettuce-3624ld.png";
+export const LOGO_URL = "https://assets.materialup.com/uploads/d8aacac5-efa3-425f-9922-ceb3748ce96a/preview.png";

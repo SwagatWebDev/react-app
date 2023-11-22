@@ -1821,5 +1821,88 @@ export const resList = [
             link: "https://www.swiggy.com/restaurants/polar-bear-6th-sector-hsr-layout-bangalore-17927",
             type: "WEBLINK"
         }
+    },
+    {
+        info: {
+            id: "42579",
+            name: "Burger King",
+            cloudinaryImageId: "e33e1d3ba7d6b2bb0d45e1001b731fcf",
+            locality: "Vega City Mall",
+            areaName: "Btm Layout",
+            costForTwo: "₹350 for two",
+            cuisines: [
+                "Burgers",
+                "American"
+            ],
+            avgRating: 4,
+            feeDetails: {
+                restaurantId: "42579",
+                fees: [
+                    {
+                        name: "BASE_DISTANCE",
+                        fee: 3200
+                    },
+                    {
+                        name: "BASE_TIME"
+                    },
+                    {
+                        name: "ANCILLARY_SURGE_FEE"
+                    }
+                ],
+                totalFee: 3200
+            },
+            parentId: "166",
+            avgRatingString: "4.0",
+            totalRatingsString: "10K+",
+            sla: {
+                deliveryTime: 20,
+                lastMileTravel: 1.9,
+                serviceability: "SERVICEABLE",
+                slaString: "20 mins",
+                lastMileTravelString: "1.9 km",
+                iconType: "ICON_TYPE_EMPTY"
+            },
+            availability: {
+                nextCloseTime: "2023-11-22 03:00:00",
+                opened: true
+            },
+            badges: {},
+            isOpen: true,
+            type: "F",
+            badgesV2: {
+                entityBadges: {
+                    imageBased: {},
+                    textBased: {},
+                    textExtendedBadges: {}
+                }
+            },
+            aggregatedDiscountInfoV3: {
+                header: "60% OFF",
+                subHeader: "UPTO ₹120"
+            },
+            loyaltyDiscoverPresentationInfo: {
+                logoCtx: {
+                    logo: "Swiggy%20One%20Lite/One_lite_vertical_logo.png"
+                },
+                freedelMessage: "FREE DELIVERY",
+                badgeType: "BADGE_TYPE_ONE_LITE"
+            },
+            differentiatedUi: {
+                displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                differentiatedUiMediaDetails: {
+                    mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                    lottie: {},
+                    video: {}
+                }
+            },
+            reviewsSummary: {},
+            displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+            restaurantOfferPresentationInfo: {}
+        },
+        analytics: {},
+        cta: {
+            link: "https://www.swiggy.com/restaurants/burger-king-vega-city-mall-btm-layout-bangalore-42579",
+            type: "WEBLINK"
+        }
     }
 ];
