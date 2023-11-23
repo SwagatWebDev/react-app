@@ -1,5 +1,5 @@
 const Shimmer = () => {
-    let filledArray = new Array(15).fill(0);
+    let filledArray = new Array(5).fill(0);
     return (
         <div className="shimmer-container">
             { filledArray.map(card => {
