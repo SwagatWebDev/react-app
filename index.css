@@ -70,6 +70,41 @@
     cursor: pointer;
 }
 
-.filter{
+.filter {
     display: flex;
+}
+
+.search {
+    flex: 1;
+    display: flex;
+}
+
+.search-box {
+    width: 75%;
+    padding: 8px;
+}
+
+.search-button {
+    width: 25%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.filter {
+    display: flex;
+}
+
+.search {
+    flex: 1;
+    display: flex;
+}
+
+.search-box {
+    width: 95%;
+    padding: 8px;
+}
+
+.search-button {
+    padding: 8px;
+    box-sizing: border-box;
 }
