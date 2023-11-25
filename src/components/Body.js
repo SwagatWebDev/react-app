@@ -71,7 +71,7 @@ const Body = () => {
     ) : (
         <div className="body">
             <div className="offer-carousel">
-                <h2>{userName + ", what's on your mind?"}</h2>
+                <h2>Best offers for you</h2>
                 <div className="offer-slide-arrows">
                     <button className="scroll-button" onClick={() => handleScroll("left", "offer-carousel-container")}>
                         &larr;
@@ -91,7 +91,7 @@ const Body = () => {
                 </div>
             </div>
             <div className="offer-carousel">
-                <h2>Foods You Might Like</h2>
+                <h2>{userName + ", what's on your mind?"}</h2>
                 <div className="food-slide-arrows">
                     <button className="scroll-button" onClick={() => handleScroll("left", "food-carousel-container")}>
                         &larr;
