@@ -1,18 +1,22 @@
 import {LOGO_URL} from "../utils/constants";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const Header = () => {
     const [btnName, setBtnName] = useState("Login");
+    useEffect(() => {
+        console.log("useEffect Called")
+    }, []);
     return (
         <div className="header">
             <div className="logo-container">
                 <img className="logo" src={LOGO_URL}/>
+                <div className="app-name">Foodie</div>
             </div>
             <div className="nav-item">
                 <ul>
-                    <li>Home</li>
-                    <li>About us</li>
-                    <li>Contact us</li>
+                    <li>Offers</li>
+                    <li>Help</li>
+                    <li>User</li>
                     <li>Cart</li>
                     <button className="login" onClick={() => {
                         btnName === "Login"
