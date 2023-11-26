@@ -114,7 +114,7 @@ const Body = () => {
                     <input
                         type="text"
                         className="search-box"
-                        placeholder="Search Restaurants..."
+                        placeholder="Search for restaurants and food"
                         value={searchText}
                         onChange={(e) => setSearchText(e.target.value)}
                         onKeyDown={handleKeyDown}
