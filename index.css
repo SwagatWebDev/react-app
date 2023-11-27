@@ -113,7 +113,11 @@
 }
 
 .about-page, .help-page{
-    height: 465px;
+    min-height: 460px;
+}
+
+.menu{
+    min-height: 460px;
 }
 
 .footer {
@@ -207,6 +211,12 @@
 
 .scroll-button:hover {
     background-color: #4caf50;
+}
+
+.link-like-text {
+    color: black;
+    text-decoration: none;
+    cursor: text;
 }
 
 
