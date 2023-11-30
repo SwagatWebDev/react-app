@@ -73,6 +73,7 @@ const Body = () => {
         <div className="body">
             <div className="offer-carousel">
                 <h2>Best offers for you</h2>
+                {offerCarousel.length >= 4 && (
                 <div className="offer-slide-arrows">
                     <button className="scroll-button" onClick={() => handleScroll("left", "offer-carousel-container")}>
                         &larr;
@@ -80,7 +81,7 @@ const Body = () => {
                     <button className="scroll-button" onClick={() => handleScroll("right", "offer-carousel-container")}>
                         &rarr;
                     </button>
-                </div>
+                </div>)}
                 <div className="offers-carousel">
                     <div id="offer-carousel-container" className="offer-carousel-container">
                         {offerCarousel.map((offer) => (
@@ -89,7 +90,7 @@ const Body = () => {
                             </div>
                         ))}
                     </div>
-                </div>
+                </div> )
             </div>
             <div className="offer-carousel">
                 <h2>{userName + ", what's on your mind?"}</h2>
