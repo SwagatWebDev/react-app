@@ -1,16 +1,22 @@
-import React from "react";
-class UserClass extends React.Component{
+import {Component} from "react";
+class UserClass extends Component{
 
     constructor(props) {
         super(props);
+        console.log("Child Constructor called");
 
         this.state = {
             count: 0
         };
     }
+
+    componentDidMount(){
+        console.log("componentDidMount called");
+    }
     render(){
         const {name, location} = this.props;
         const {count} = this.state;
+        console.log("Child render called");
         return (
             <div className="user-card">
                 <h1>Count: {count}</h1>

@@ -90,7 +90,7 @@ const Body = () => {
                             </div>
                         ))}
                     </div>
-                </div> )
+                </div>
             </div>
             <div className="offer-carousel">
                 <h2>{userName + ", what's on your mind?"}</h2>
