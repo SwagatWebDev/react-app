@@ -1,6 +1,7 @@
 import {LOGO_URL} from "../utils/constants";
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
+import LogoImage from "../images/preview.png";
 
 const Header = () => {
     const [btnName, setBtnName] = useState("Login");
@@ -11,7 +12,7 @@ const Header = () => {
         <div className="header">
             <div className="logo-container">
                 <Link to="/">
-                    <img className="logo" src={LOGO_URL}/>
+                    <img className="logo" src={LogoImage}/>
                 </Link>
                 <div className="app-name">Foodies</div>
             </div>

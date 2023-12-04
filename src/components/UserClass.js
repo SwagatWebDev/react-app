@@ -3,30 +3,40 @@ class UserClass extends Component{
 
     constructor(props) {
         super(props);
-        console.log("Child Constructor called");
+        console.log(this.props.name, "Child Constructor called");
 
         this.state = {
-            count: 0
+            userInfo: {
+                name: "Dummy",
+                location: "default"
+            },
         };
     }
 
-    componentDidMount(){
-        console.log("componentDidMount called");
+    async componentDidMount(){
+        console.log(this.props.name, "componentDidMount called");
+        const data = await fetch("https://api.github.com/users/SwagatWebDev");
+        const response = await data.json();
+        console.log(response);
+        this.setState({
+            userInfo: response
+        })
     }
+
+    componentDidUpdate() {
+        console.log("Component Did updated")
+    }
+
+    componentWillUnmount() {
+        console.log("Component will unmount")
+    }
+
     render(){
-        const {name, location} = this.props;
-        const {count} = this.state;
-        console.log("Child render called");
+        const {name, location, avatar_url} = this.state.userInfo;
+        console.log(this.props.name, "Child render called");
         return (
             <div className="user-card">
-                <h1>Count: {count}</h1>
-                <button onClick={() => {
-                   this.setState({
-                       count: this.state.count + 1
-                   })
-                }}>
-                    Increase count
-                </button>
+                <img src={avatar_url}/>
                 <h2>Name: {name}</h2>
                 <h3>Location: {location}</h3>
                 <h4>Contact: @SwagatWebDev</h4>
