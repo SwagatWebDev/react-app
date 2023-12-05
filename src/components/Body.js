@@ -35,7 +35,6 @@ const Body = () => {
             "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9165757&lng=77.6101163&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
         const data = await fetch(API_URL);
         const response = await data.json();
-        console.log(response);
         const restaurantListData =
             response?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
         const foodCarousel =

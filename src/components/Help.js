@@ -1,4 +1,19 @@
+import {useEffect} from "react";
+
 const Help = () => {
+    useEffect(()=>{
+        const timer = setInterval(() => {
+            console.log("Inside set Interval componentDidMount called")
+        }, 1000);
+        console.log("useEffect called");
+        // Used for unmounting phase
+        return () => {
+            clearInterval(timer);
+            console.log("useEffect return called")
+        }
+    }, []);
+
+    console.log("render called")
     return (
         <div className="help-page">
             <h1>Welcome to Foodies Customer Support</h1>

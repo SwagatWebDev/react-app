@@ -220,8 +220,13 @@
 }
 
 .user-card{
-    padding: 10px;
-    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+    width: 262px;
+    height: 606px;
+    border: 1px solid #ddd;
+    transition: border 0.3s;
+    border-radius: 8px;
 }
 
 

@@ -36,7 +36,7 @@ class UserClass extends Component{
         console.log(this.props.name, "Child render called");
         return (
             <div className="user-card">
-                <img src={avatar_url}/>
+                <img src={avatar_url} style={{width: "inherit"}}/>
                 <h2>Name: {name}</h2>
                 <h3>Location: {location}</h3>
                 <h4>Contact: @SwagatWebDev</h4>
