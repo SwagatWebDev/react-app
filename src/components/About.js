@@ -6,15 +6,15 @@ class About extends Component{
 
     constructor(props) {
         super(props);
-        console.log("Parent Constructor Called");
+        // console.log("Parent Constructor Called");
     }
 
     componentDidMount() {
-        console.log("Parent componentDidMount called");
+        // console.log("Parent componentDidMount called");
     }
 
     render(){
-        console.log("Parent Render Called");
+        // console.log("Parent Render Called");
         return (
             <div className="about-page">
                 <h1>About Us</h1>
