@@ -112,7 +112,7 @@
     flex-direction: column;
 }
 
-.about-page, .help-page{
+.about-page, .help-page, .grocery-page{
     min-height: 460px;
 }
 
