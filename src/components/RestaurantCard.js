@@ -1,20 +1,35 @@
-import {CDN_URL} from "../utils/constants";
+import { CDN_URL } from "../utils/constants";
 
 const RestaurantCard = (props) => {
-    const {resData} = props;
+    const { resData } = props;
+
     return (
-        <div className="res-card">
-            <img className="res-logo"
-                 alt="res-logo"
-                 src={CDN_URL + resData.info.cloudinaryImageId}
+        <div className="res-card bg-white p-4 rounded-lg shadow-lg">
+            <img
+                className="res-logo w-full h-32 object-cover rounded-t-lg mb-4"
+                alt="res-logo"
+                src={CDN_URL + resData.info.cloudinaryImageId}
             />
-            <h3>{resData.info.name}</h3>
-            <h4>{resData.info.cuisines.join(', ')}</h4>
-            <h4>{resData.info.avgRating} stars</h4>
-            <h4>{resData.info.costForTwo}</h4>
-            <h4>{resData.info.sla.deliveryTime} mins</h4>
+            <h3 className="text-xl font-bold mb-2">{resData.info.name}</h3>
+            <h4 className="text-gray-600 mb-2">{resData.info.cuisines.join(', ')}</h4>
+            <div className="flex items-center mb-2">
+                <span className="text-yellow-500 mr-1">&#9733;</span>
+                <span className="text-gray-700">{resData.info.avgRating} stars</span>
+            </div>
+            <div className="flex items-center mb-2">
+                <span className="text-gray-700">Cost for Two:</span>
+                <span className="text-green-600 font-bold ml-1">
+                    ${resData.info.costForTwo}
+                </span>
+            </div>
+            <div className="flex items-center">
+                <span className="text-gray-700">Delivery Time:</span>
+                <span className="text-blue-600 font-bold ml-1">
+                    {resData.info.sla.deliveryTime} mins
+                </span>
+            </div>
         </div>
     );
-}
+};
 
 export default RestaurantCard;
