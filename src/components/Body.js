@@ -161,7 +161,7 @@ const Body = () => {
                             <img
                                 src={CDN_URL + food.imageId}
                                 alt={`Food ${food.id}`}
-                                className="w-full h-32 object-cover rounded-t-lg"
+                                className="w-full h-36 object-cover rounded-t-lg"
                             />
                             <div className="absolute bottom-0 left-0 right-0 p-4">
                                 <p className="text-gray-700 text-sm mb-2">{food.name}</p>
