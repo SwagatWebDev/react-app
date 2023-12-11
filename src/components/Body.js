@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {withVegetarianRestaurant} from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { CDN_URL, OFFER_NEAR_BY_BASE_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
@@ -16,6 +16,10 @@ const Body = () => {
     useEffect(() => {
         fetchData();
     }, []);
+
+    console.log("listOfRestaurants", listOfRestaurants);
+
+    const VegetarianRestaurant = withVegetarianRestaurant(RestaurantCard);
 
     const handleScroll = (direction, containerName) => {
         const container =
@@ -213,8 +217,11 @@ const Body = () => {
                         className="link-like-text"
                     >
                         <div
-                            className="res-card m-5 p-5 w-64 h-72 bg-white border border-gray-300 transition duration-300 rounded-md overflow-hidden hover:border-2 hover:border-green-500 shadow-lg">
-                            <RestaurantCard resData={restaurant}/>
+                            className="res-card m-5 p-5 w-64 h-72 bg-white border border-gray-300
+                            transition duration-300 rounded-md overflow-hidden
+                            hover:border-2 hover:border-green-500 shadow-lg">
+                            {restaurant.info.veg ? (<VegetarianRestaurant resData={restaurant}/>) :
+                                (<RestaurantCard resData={restaurant}/>)}
                         </div>
                     </Link>
                 ))}

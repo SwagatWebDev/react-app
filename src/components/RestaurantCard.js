@@ -19,7 +19,7 @@ const RestaurantCard = (props) => {
             <div className="flex items-center mb-2">
                 <span className="text-gray-700">Cost for Two:</span>
                 <span className="text-green-600 font-bold ml-1">
-                    ${resData.info.costForTwo}
+                    {resData.info.costForTwo}
                 </span>
             </div>
             <div className="flex items-center">
@@ -30,6 +30,19 @@ const RestaurantCard = (props) => {
             </div>
         </div>
     );
+};
+
+export const withVegetarianRestaurant = () => {
+    return (props) => {
+        return (
+            <div className="relative">
+                <div className="absolute transform rotate-45 bg-green-500 text-center text-white font-semibold px-7 right-[-29px] top-[15px]">
+                    <span className="text-sm">Vegetarian</span>
+                </div>
+                <RestaurantCard {...props} />
+            </div>
+        );
+    };
 };
 
 export default RestaurantCard;
