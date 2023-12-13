@@ -6,7 +6,7 @@
     margin: 5px;
     padding: 1px;
     width: 265px;
-    height: 371px;
+    height: 385px;
     transition: border 0.3s;
     border-radius: 8px;
 }
@@ -43,7 +43,7 @@
 .shimmer-card{
     margin: 5px;
     padding: 5px;
-    width: 273px;
+    width: 276px;
     height: 606px;
     background-color: #f0f0f0;
 }
@@ -148,14 +148,14 @@
 }
 
 .scroll-button {
-    background-color: #f0f0f0;
+    background-color: #E5E4E2;
     color: black;
     padding: 10px;
     border: none;
     border-radius: 50%;
     cursor: pointer;
     font-size: 15px;
-    margin-left: 10px;
+    margin-left: 9px;
     transition: background-color 0.3s;
 }
 
