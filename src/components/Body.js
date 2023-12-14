@@ -1,16 +1,17 @@
-import { useEffect, useState } from "react";
+import {useContext, useEffect, useState} from "react";
 import RestaurantCard, {withVegetarianRestaurant} from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { CDN_URL, OFFER_NEAR_BY_BASE_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
     const [listOfRestaurants, setListOfRestaurants] = useState([]);
     const [filteredRestaurant, setFilteredRestaurant] = useState([]);
     const [foodCarousel, setFoodCarousel] = useState([]);
     const [searchText, setSearchText] = useState("");
-    const [userName, setUserName] = useState("");
+    const [userInfo, setUserInfo] = useState("");
     const [offerCarousel, setOfferCarousel] = useState([]);
 
     useEffect(() => {
@@ -51,7 +52,7 @@ const Body = () => {
         setListOfRestaurants(restaurantListData);
         setFilteredRestaurant(restaurantListData);
         setFoodCarousel(foodCarousel);
-        setUserName("Swagat");
+        setUserInfo("Swagat");
         setOfferCarousel(offerCarousel);
     };
 
@@ -74,6 +75,8 @@ const Body = () => {
 
     const onlineStatus = useOnlineStatus();
 
+    const { loggedInUser, setUserName } = useContext(UserContext);
+
     if (onlineStatus === false) {
         return (
             <h1>
@@ -86,6 +89,23 @@ const Body = () => {
         <Shimmer />
     ) : (
         <div className="body bg-gray-100 p-8">
+            {/*<div className="filter mb-4">
+                <div className="search flex items-center space-x-4">
+                    <input
+                        type="text"
+                        className="search-box flex-grow p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+                        placeholder="Search for restaurants and food"
+                        value={loggedInUser}
+                        onChange={(e) => setUserName(e.target.value)}
+                    />
+                    <button
+                        className="search-button bg-green-500 text-white px-4 py-2 rounded-md transition duration-300 hover:bg-green-600"
+                        onClick={handleSearch}
+                    >
+                        Search
+                    </button>
+                </div>
+            </div>*/}
             <div className="offer-carousel mb-8">
                 <h2 className="text-3xl font-bold mb-4 text-green-600">
                     Best offers for you
@@ -137,7 +157,7 @@ const Body = () => {
 
             <div className="offer-carousel mb-8">
                 <h2 className="text-3xl font-bold mb-4 text-blue-600">
-                    {`${userName}, what's on your mind?`}
+                    {`${userInfo}, what's on your mind?`}
                 </h2>
                 <div className="food-slide-arrows flex items-center space-x-4">
                     <button
