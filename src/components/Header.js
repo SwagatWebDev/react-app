@@ -1,20 +1,20 @@
 import { LOGO_URL } from "../utils/constants";
 import {useContext, useState} from "react";
 import { Link } from "react-router-dom";
-import LogoImage from "../images/preview.png";
+import LogoImage from "../images/app-logo.png";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 
 const Header = () => {
-    const [btnName, setBtnName] = useState("Login");
     const onlineStatus = useOnlineStatus();
-    const {loggedInUser} = useContext(UserContext);
+    const {loggedInUser, profilePicture} = useContext(UserContext);
+    console.log(profilePicture)
 
     return (
         <div className="flex justify-between items-center bg-gradient-to-r from-emerald-200 via-yellow-50 shadow-lg p-4">
             <div className="logo-container flex items-center">
                 <Link to="/">
-                    <img className="w-24" src={LogoImage} alt="Logo" />
+                    <img className="w-24" src={LOGO_URL} alt="Logo" />
                 </Link>
                 <div className="ml-4 text-xl font-bold">Foodies</div>
             </div>
@@ -23,7 +23,6 @@ const Header = () => {
                     <li>
                         Online Status: {onlineStatus ? "✅" : "🛑"}
                     </li>
-                    <li>Offers</li>
                     <li>
                         <Link to="/help">Help</Link>
                     </li>
@@ -34,12 +33,10 @@ const Header = () => {
                         <Link to="/grocery">Grocery</Link>
                     </li>
                     <li>Carts</li>
-                    <li className="font-bold">{loggedInUser}</li>
-                    {/*<button className="login" onClick={() => {*/}
-                    {/*    btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");*/}
-                    {/*}}>*/}
-                    {/*    {btnName}*/}
-                    {/*</button>*/}
+                    <li className="font-bold flex items-center">
+                        <img className="w-8 h-7 rounded-full" src={profilePicture} alt="User Logo"/>
+                        <span className="ml-2">{loggedInUser}</span>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -8,6 +8,7 @@ import About from "./src/components/About";
 import Error from "./src/components/Error";
 import RestaurantMenu from "./src/components/RestaurantMenu";
 import UserContext from "./src/utils/UserContext";
+import {Provider} from "react-redux";
 
 const Grocery = lazy(() => import("./src/components/Grocery"));
 
@@ -16,24 +17,34 @@ const Help = lazy(() => import("./src/components/Help"));
 const AppLayout = () => {
 
     const [userName, setUserName] = useState();
+    const [profilePicture, setProfilePicture] = useState();
 
     // authentication logic
     useEffect(() => {
         // Make an API call and send the username and password
+        fetchGitHubUserInfo();
         const data = {
             name: "Swagat Mishra"
         }
-        setUserName(data.name);
     }, [])
 
+    const fetchGitHubUserInfo = async () => {
+        const data = await fetch("https://api.github.com/users/SwagatWebDev");
+        const response = await data.json();
+        setUserName(response.name);
+        setProfilePicture(response.avatar_url)
+    }
+
     return (
-        <UserContext.Provider value={{loggedInUser: userName, setUserName}}>
-            <div className="app">
-                <Header/>
-                <Outlet/>
-                <Footer/>
-            </div>
-        </UserContext.Provider>
+        <Provider store={appStore}>
+            <UserContext.Provider value={{loggedInUser: userName, profilePicture, setUserName}}>
+                <div className="app">
+                    <Header/>
+                    <Outlet/>
+                    <Footer/>
+                </div>
+            </UserContext.Provider>
+        </Provider>
     );
 }
 
