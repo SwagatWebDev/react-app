@@ -1,19 +1,32 @@
-import { useEffect } from "react";
+import {useEffect, useMemo, useState} from "react";
+import {findNthPrime} from "../utils/helper";
 
 const Help = () => {
-    useEffect(() => {
-        const timer = setInterval(() => {
-            console.log("Inside set Interval componentDidMount called");
-        }, 1000);
-        console.log("useEffect called");
-        // Used for unmounting phase
-        return () => {
-            clearInterval(timer);
-            console.log("useEffect return called");
-        };
-    }, []);
+    // useEffect(() => {
+    //     const timer = setInterval(() => {
+    //         console.log("Inside set Interval componentDidMount called");
+    //     }, 1000);
+    //     console.log("useEffect called");
+    //     // Used for unmounting phase
+    //     return () => {
+    //         clearInterval(timer);
+    //         console.log("useEffect return called");
+    //     };
+    // }, []);
 
-    console.log("render called");
+    const [text, setText] = useState(0);
+    const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+    // const findPrime = () => {
+    //     console.log("Calculate Prime Number of", text)
+    //     return findNthPrime(text);
+    // }
+
+    // const findPrime = findNthPrime(text);
+
+    const findPrime= useMemo(() => findNthPrime(text), [text]);
+
+    console.log("render called", "Text is " + text);
     return (
         <div className="help-page p-8">
             <h1 className="text-3xl font-bold mb-4 text-green-600">Welcome to Foodies Customer Support</h1>
@@ -23,7 +36,8 @@ const Help = () => {
             <div className="mt-8">
                 <h2 className="text-2xl font-bold mb-2">Contact Information</h2>
                 <p>
-                    You can reach us via email at <strong className="text-green-600">support@foodies.com</strong> or by phone at{" "}
+                    You can reach us via email at <strong className="text-green-600">support@foodies.com</strong> or by
+                    phone at{" "}
                     <strong className="text-green-600">+1 (123) 456-7890</strong>.
                 </p>
             </div>
@@ -34,6 +48,25 @@ const Help = () => {
                     <li className="text-lg">What payment methods are accepted?</li>
                     <li className="text-lg">How can I track my order?</li>
                 </ul>
+            </div>
+            <div
+                className={"m-4 p-2 w-96 h-96 border border-black text-center text-black" + (isDarkTheme && "mt-1 bg-blue-700")}>
+                <p className="font-bold">Memorization Example</p>
+                <button className="m-10 p-2 bg-green-500 rounded-lg"
+                        onClick={() => setIsDarkTheme(!isDarkTheme)}>
+                    Toggle Theme
+                </button>
+                <div>
+                    <input
+                        className="border border-black w-72 px-2"
+                        type="number"
+                        value={text}
+                        onChange={(e) => setText(e.target.value)}
+                    />
+                </div>
+                <div>
+                    <h1 className="mt-4 font-bold text-lg">nth Prime: {findPrime}</h1>
+                </div>
             </div>
         </div>
     );
