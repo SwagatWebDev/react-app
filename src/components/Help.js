@@ -63,7 +63,7 @@ const Help = () => {
                     <li className="text-lg">How can I track my order?</li>
                 </ul>
             </div>
-            <h2 className="text-2xl font-bold mb-2 mt-8">useMemo, useCallback and useRef Hook in React</h2>
+            {/*<h2 className="text-2xl font-bold mb-2 mt-8">useMemo, useCallback and useRef Hook in React</h2>
             <div className="flex">
                 <div
                     className={"m-4 p-2 w-96 h-96 border border-black text-center text-black" + (isDarkTheme && "mt-1 bg-blue-700")}>
@@ -137,7 +137,7 @@ const Help = () => {
                         <span className="font-bold text-lg">Ref = {ref.current}</span>
                     </div>
                 </div>
-            </div>
+            </div>*/}
         </div>
     );
 };
