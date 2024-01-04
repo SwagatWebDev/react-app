@@ -39,14 +39,15 @@ const Body = () => {
 
     const fetchData = async () => {
         const API_URL =
-            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9165757&lng=77.6101163&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.933176&lng=80.238635&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
         const data = await fetch(API_URL);
         const response = await data.json();
+        console.log(response);
         const restaurantListData =
-            response?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+            response?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
                 ?.restaurants;
         const foodCarousel =
-            response?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.info;
+            response?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info;
         const offerCarousel =
             response?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info;
         setListOfRestaurants(restaurantListData);
@@ -106,54 +107,54 @@ const Body = () => {
                     </button>
                 </div>
             </div>*/}
-            <div className="offer-carousel mb-8">
-                <h2 className="text-3xl font-bold mb-4 text-green-600">
-                    Best offers for you
-                </h2>
-                {offerCarousel.length >= 4 && (
-                    <div className="offer-slide-arrows flex items-center space-x-4">
-                        <button
-                            className="scroll-button"
-                            onClick={() =>
-                                handleScroll("left", "offer-carousel-container")
-                            }
-                        >
-                            &larr;
-                        </button>
-                        <button
-                            className="scroll-button"
-                            onClick={() =>
-                                handleScroll("right", "offer-carousel-container")
-                            }
-                        >
-                            &rarr;
-                        </button>
-                    </div>
-                )}
-                <div
-                    id="offer-carousel-container"
-                    className="offer-carousel-container overflow-x-auto whitespace-nowrap relative"
-                >
-                    {offerCarousel.map((offer) => (
-                        <div
-                            key={offer.imageId}
-                            className="offer-carousel-item inline-block mr-4 rounded-lg overflow-hidden shadow-lg relative"
-                        >
-                            <img
-                                src={OFFER_NEAR_BY_BASE_URL + offer.imageId}
-                                alt={`Food ${offer.id}`}
-                                className="w-full h-48 object-cover rounded-t-lg"
-                            />
-                            <div className="absolute bottom-0 w-full">
-                                <p className="text-gray-700 text-sm mb-2">{offer.name}</p>
-                                <p className="text-green-600 font-bold text-lg">
-                                    {offer.discount}
-                                </p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            {/*<div className="offer-carousel mb-8">*/}
+            {/*    <h2 className="text-3xl font-bold mb-4 text-green-600">*/}
+            {/*        Best offers for you*/}
+            {/*    </h2>*/}
+            {/*    {offerCarousel.length >= 4 && (*/}
+            {/*        <div className="offer-slide-arrows flex items-center space-x-4">*/}
+            {/*            <button*/}
+            {/*                className="scroll-button"*/}
+            {/*                onClick={() =>*/}
+            {/*                    handleScroll("left", "offer-carousel-container")*/}
+            {/*                }*/}
+            {/*            >*/}
+            {/*                &larr;*/}
+            {/*            </button>*/}
+            {/*            <button*/}
+            {/*                className="scroll-button"*/}
+            {/*                onClick={() =>*/}
+            {/*                    handleScroll("right", "offer-carousel-container")*/}
+            {/*                }*/}
+            {/*            >*/}
+            {/*                &rarr;*/}
+            {/*            </button>*/}
+            {/*        </div>*/}
+            {/*    )}*/}
+            {/*    <div*/}
+            {/*        id="offer-carousel-container"*/}
+            {/*        className="offer-carousel-container overflow-x-auto whitespace-nowrap relative"*/}
+            {/*    >*/}
+            {/*        {offerCarousel.map((offer) => (*/}
+            {/*            <div*/}
+            {/*                key={offer.imageId}*/}
+            {/*                className="offer-carousel-item inline-block mr-4 rounded-lg overflow-hidden shadow-lg relative"*/}
+            {/*            >*/}
+            {/*                <img*/}
+            {/*                    src={OFFER_NEAR_BY_BASE_URL + offer.imageId}*/}
+            {/*                    alt={`Food ${offer.id}`}*/}
+            {/*                    className="w-full h-48 object-cover rounded-t-lg"*/}
+            {/*                />*/}
+            {/*                <div className="absolute bottom-0 w-full">*/}
+            {/*                    <p className="text-gray-700 text-sm mb-2">{offer.name}</p>*/}
+            {/*                    <p className="text-green-600 font-bold text-lg">*/}
+            {/*                        {offer.discount}*/}
+            {/*                    </p>*/}
+            {/*                </div>*/}
+            {/*            </div>*/}
+            {/*        ))}*/}
+            {/*    </div>*/}
+            {/*</div>*/}
 
             <div className="offer-carousel mb-8">
                 <h2 className="text-3xl font-bold mb-4 text-blue-600">
